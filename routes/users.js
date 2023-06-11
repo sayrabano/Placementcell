@@ -42,5 +42,9 @@ router.get("/sign-out", destroySession);
 
 // route for downloading csv reports
 router.get("/download", downloadCSVReport);
+// Define routes for Google authentication
+router.get('/users/auth/google', passport.authenticate('google',{scope:['profile','email']}));
 
+//callback from google
+router.get('/users/auth/google/callback', passport.authenticate('google',{failureRedirect:'/'}),createSession);
 module.exports = router;
