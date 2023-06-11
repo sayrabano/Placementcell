@@ -1,0 +1,39 @@
+
+<!-- header view -->
+<link href="../css/header.css" rel="stylesheet">
+<header id="layout-header">
+  <nav>
+      <div class="mini-logo">
+          <p>
+              <a href='/dashboard'>
+                  PlacementCell
+              </a>
+          </p>
+      </div>
+  
+      <div class="auth-links">
+          <ul>
+              <!-- checking user if present will show signout and reset password link in header -->
+              <% if (locals.user){ %>
+              
+              <li>
+                <a class="navbar-brand" href="/dashboard">Dashboard</a>
+              </li>
+              
+              
+              <div>
+              <li style="margin-top: 0.5rem;">
+                <%= user.username %>
+            </li>
+              </div>
+            </div>
+              
+      
+              <% } %>
+          </ul>
+      </div>
+  </nav>
+
+
+
+</header>
