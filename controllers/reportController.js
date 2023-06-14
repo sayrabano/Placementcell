@@ -1,7 +1,9 @@
+// required library
 const fs = require("fs");
 const path = require("path");
 const Student = require("../models/student");
 
+// function to download csv file/report
 module.exports.downloadCSVReport = async function (req, res) {
   try {
     const allStudents = await Student.find({});
@@ -40,7 +42,7 @@ module.exports.downloadCSVReport = async function (req, res) {
         }
       }
     }
-
+// creating csv file on server
     const csvFile = fs.writeFile(
       "uploads/studentsReport.csv",
       report,

@@ -1,5 +1,6 @@
 const User = require("../models/user");
 
+// function to render profile page
 module.exports.profile = function (req, res) {
   return res.render("user_profile", {
     title: "User Profile",
@@ -9,7 +10,7 @@ module.exports.profile = function (req, res) {
 
 
 
-// render the Sign In page
+// function to render the Sign In page
 module.exports.signIn = (req, res) => {
   if (req.isAuthenticated()) {
     return res.redirect("/dashboard");
@@ -73,7 +74,7 @@ module.exports.createSession = (req, res) => {
   return res.redirect("/profile");
 };
 
-// clears the cookie
+// clearing the cookie
 module.exports.destroySession = (req, res) => {
   req.logout((err) => {
     if (err) {

@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 
+// creating schema for student
 const studentSchema = new mongoose.Schema(
   {
     name: {
@@ -36,6 +37,7 @@ const studentSchema = new mongoose.Schema(
       enum: ["Placed", "Not placed"],
       required: true,
     },
+    // getting interviews
     interviews: [
       {
         company: {

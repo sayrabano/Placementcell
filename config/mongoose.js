@@ -1,6 +1,6 @@
 // required library
 const mongoose = require('mongoose');
-//  mongoose.connect('mongodb://localhost/codeial_development');
+
 
  mongoose.connect('mongodb+srv://sayrabano8888:mdOZ2NqcyHBeFGBe@cluster0.zwczm6d.mongodb.net/?retryWrites=true&w=majority',{
     useNewUrlParser:true

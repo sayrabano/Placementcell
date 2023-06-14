@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 
+// creating schema for interview
 const interviewSchema = new mongoose.Schema(
   {
     company: {

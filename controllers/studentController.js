@@ -1,7 +1,7 @@
 const Interview = require("../models/interview");
 const Student = require("../models/student");
 
-// render add student page
+// function to render add student page
 module.exports.addStudent = (req, res) => {
   if (req.isAuthenticated()) {
     return res.render("add_student", {
@@ -12,7 +12,7 @@ module.exports.addStudent = (req, res) => {
   return res.redirect("/");
 };
 
-// render edit student page
+// function to render edit student page
 module.exports.editStudent = async (req, res) => {
   const student = await Student.findById(req.params.id);
 
@@ -75,7 +75,7 @@ module.exports.create = async (req, res) => {
   }
 };
 
-// Deletion of student
+// function to deletion of student
 module.exports.destroy = async (req, res) => {
   try {
     const { studentId } = req.params;

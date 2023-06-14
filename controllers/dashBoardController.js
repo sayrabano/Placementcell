@@ -1,6 +1,8 @@
+// required librry
 const Interview = require("../models/interview");
 const Student = require("../models/student");
 
+// function to show dashboard
 module.exports.dashboard = async function (req, res) {
   try {
     if (req.isAuthenticated()) {

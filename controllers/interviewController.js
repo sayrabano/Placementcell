@@ -1,7 +1,7 @@
 const Interview = require("../models/interview");
 const Student = require("../models/student");
 
-// renders the addInterview page
+// function render the addInterview page
 module.exports.addInterview = (req, res) => {
   if (req.isAuthenticated()) {
     return res.render("add_interview", {
@@ -12,7 +12,7 @@ module.exports.addInterview = (req, res) => {
   return res.redirect("/");
 };
 
-// creating a new interview
+// creating a new interview function
 module.exports.create = async (req, res) => {
   try {
     const { company, date } = req.body;
@@ -34,7 +34,7 @@ module.exports.create = async (req, res) => {
   }
 };
 
-// Enrolling student in the interview
+// function to enrolling student in the interview
 module.exports.enrollInInterview = async (req, res) => {
   try {
     let interview = await Interview.findById(req.params.id);
@@ -93,7 +93,7 @@ module.exports.enrollInInterview = async (req, res) => {
   }
 };
 
-// deallocating students from an interview
+// function to deallocate tudents from an interview
 module.exports.deallocate = async (req, res) => {
   try {
     const { studentId, interviewId } = req.params;
